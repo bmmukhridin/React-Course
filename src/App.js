@@ -4,7 +4,7 @@ import Header from "../componets/Header";
 import FeedbackList from "../componets/FeedbackList";
 import FeedbackData from "../componets/feedbackData";
 import FeedbackStats from "../componets/FeedbackStats";
-
+import FeedbackForm from "../componets/Shared/FeedbackForm";
 export default function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
   const deleteFeedback = (id) => {
@@ -16,7 +16,9 @@ export default function App() {
   return (
     <>
       <Header text="Feedback UI" />
+
       <div className="container">
+        <FeedbackForm />
         <FeedbackStats feedback={feedback} />
         <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
       </div>
