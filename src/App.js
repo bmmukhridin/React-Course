@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./styles.css";
 import Header from "../componets/Header";
 import FeedbackList from "../componets/FeedbackList";
@@ -12,9 +12,7 @@ export default function App() {
       setFeedback(feedback.filter((item) => item.id !== id));
     }
   };
-  useEffect(() => {
-    console.log(feedback);
-  });
+
   return (
     <>
       <Header text="Feedback UI" />
