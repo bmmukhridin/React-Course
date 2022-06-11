@@ -2,8 +2,9 @@ import { useState } from "react";
 import Card from "./Card";
 import Button from "./Button";
 import Rating from "componets/RatingSelect";
+//import { func } from "prop-types";
 
-function FeedbackForm() {
+function FeedbackForm({ handleAdd }) {
   const [text, setText] = useState("");
   const [btnDisabled, setbtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
@@ -23,9 +24,20 @@ function FeedbackForm() {
     setText(e.target.value);
   };
 
+  const handleSubmit = function (e) {
+    e.preventDefault();
+    if (text.trim().length > 10) {
+      const newFeedback = {
+        text,
+        rating
+      };
+      handleAdd(newFeedback);
+    }
+  };
+
   return (
     <Card>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>How would you rate our service with us?</h2>
         <Rating select={(rating) => setRating(rating)} />
         <div className="input-group">
