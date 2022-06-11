@@ -7,6 +7,7 @@ function FeedbackForm() {
   const [text, setText] = useState("");
   const [btnDisabled, setbtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
+  const [rating, setRating] = useState(10);
 
   const handleTextChange = function (e) {
     if (text === "") {
@@ -26,7 +27,7 @@ function FeedbackForm() {
     <Card>
       <form>
         <h2>How would you rate our service with us?</h2>
-        <Rating />
+        <Rating select={(rating) => setRating(rating)} />
         <div className="input-group">
           <input
             onChange={handleTextChange}

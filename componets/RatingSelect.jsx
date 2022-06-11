@@ -1,11 +1,11 @@
-import { func } from "prop-types";
 import { useState } from "react";
 
-function Rating() {
+function Rating({ select }) {
   const [selected, setSelect] = useState(10);
 
   const handleChange = function (e) {
-    setSelect(+e.curentTarget.value);
+    setSelect(+e.currentTarget.value);
+    select(+e.currentTarget.value);
   };
 
   return (
