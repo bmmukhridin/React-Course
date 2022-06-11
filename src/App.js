@@ -10,9 +10,9 @@ export default function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
 
   const addFeedback = (newFeedback) => {
-    console.log(newFeedback);
+    //console.log(newFeedback);
     newFeedback.id = uuidv4();
-    //setFeedback([newFeedback, ...feedback]);
+    setFeedback([newFeedback, ...feedback]);
   };
   const deleteFeedback = (id) => {
     if (window.confirm("Are you suere to delete?")) {
