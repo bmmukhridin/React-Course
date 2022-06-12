@@ -19,7 +19,7 @@ const FeedbackData = [
   },
   {
     id: 4,
-    rating: 7,
+    rating: 1,
     text:
       "There were 6 barristers or helper at the counter at one time but the services was so poor. Not efficient, slow, not service oriented, no team work and they were not supporting each other. At the end, services to customers were affected."
   }
