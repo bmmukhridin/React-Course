@@ -1,4 +1,9 @@
-function FeedbackStats({ feedback }) {
+import feedbackContext from "../componets/context/FeedbackContext";
+import { useContext } from "react";
+///////////////
+///////////////
+function FeedbackStats() {
+  const { feedback } = useContext(feedbackContext);
   //Calculate Averege
   let calc =
     feedback.reduce((acc, cur) => {
